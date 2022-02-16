@@ -1,0 +1,1 @@
+C:\my-coding-projects\BugTracker Portfolio Project\Client\bin\Release\net6.0\publish\web.config

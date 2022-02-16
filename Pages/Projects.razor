@@ -1,0 +1,158 @@
+@page "/projects"
+@using System.Text.Json
+@using System.Net.Http.Headers
+@using Client.Services
+@using Client.Models
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims;
+@inject HttpClient HttpClient
+@attribute [Authorize]
+@inject ILocalStorageService LocalStorage
+@inject IHttpService HttpService
+
+@inject NavigationManager NavigationManager
+@inject IConfiguration Configuration
+@inject IEntityService EntityService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+<PageTitle>List of Projects</PageTitle>
+
+<h1>Projects</h1>
+@if (EntityService.ProjectsWithUsers == null)
+{
+    <h1><em>Loading...</em></h1>
+}
+else {
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created By</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var project in EntityService.ProjectsWithUsers)
+            {
+                <tr>
+                    <td>@project.name</td>
+                    <td>@project.description</td>
+                    <td>@project.userCreated.username</td>
+                </tr>
+            }
+    </tbody>
+</table>
+}
+<AuthorizeView Roles="Admin">
+<Authorized Context="authComponentContext">
+<h2>Only Admin User's May Create a New Project</h2>
+<h4>You are authorized as Admin</h4>
+
+<EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
+    <div class="col-md-12 mb-3">
+        <label for="Name">Name</label>
+        <InputText id="Name" @bind-Value="projectDTO.Name" class="form-control" />
+    </div>
+    <div class="col-md-12 mb-3">
+        <label for="Description">Description</label>
+        <InputText id="Description" @bind-Value="projectDTO.Description" class="form-control" />
+    </div>
+        <button type="submit" class="btn btn-primary btn-large" >Create Project</button>
+    <ValidationSummary />
+</EditForm>
+<div class="col-md-12 mb-3">
+<button class="btn btn-danger" @onclick="EntityService.GetProjects">Force Refresh Project Data</button>
+</div>
+</Authorized>
+<NotAuthorized>
+    <h2>Only an Admin user may create a new project.</h2> 
+</NotAuthorized>
+</AuthorizeView>
+@code {
+    private static string consoleMessage = "";
+    private ProjectDTO projectDTO = new ProjectDTO();
+    // private List<ProjectDTO> projects = new List<ProjectDTO>();
+    private Object projects;
+    private EditContext EditContext;
+    private string projectJson;
+    private string currentUserName = string.Empty;
+    private List<ProjectWithUserDTO> currentProjects = new List<ProjectWithUserDTO>();
+
+    protected async override void OnInitialized()
+    {
+        EditContext = new EditContext(projectDTO);
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        Console.WriteLine("Inside OnInitialized()");
+        currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
+        await EntityService.GetProjects();
+        StateHasChanged();
+    }
+
+    protected async override void OnParametersSet()
+    {
+        Console.WriteLine("OnParametersSet");
+        Console.WriteLine("Calling GetProjects() from OnParametersSet()");
+
+    }
+
+    private async void HandleSubmit()
+    {
+        Console.WriteLine("HandleSubmit Called...");
+
+        if (EditContext.Validate())
+        {
+            projectDTO = EditContext.Model as ProjectDTO;
+            projectDTO.UserCreated = currentUserName;
+
+
+            Console.WriteLine("The user named " + projectDTO.UserCreated + " created this project.");
+
+            await EntityService.CreateProject(projectDTO);
+
+            projectDTO.Name = string.Empty;
+            projectDTO.Description = string.Empty;
+        }
+        else
+        {
+            Console.WriteLine("Form is Invalid...");
+        }
+        await EntityService.GetProjects();
+        StateHasChanged();
+    }
+
+private static async Task<ProjectDTO> ProjectsFromJson(string uri, HttpClient httpClient, string? token)
+{
+
+    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.Trim('"'));
+    httpClient.DefaultRequestHeaders.Add("x-custom-header", "value");
+
+    using var httpResponse = await httpClient.GetAsync(uri, HttpCompletionOption.ResponseHeadersRead);
+
+    httpResponse.EnsureSuccessStatusCode();
+    
+
+    if (httpResponse.Content.Headers.ContentType.MediaType == "application/json")
+    {
+        var contentStream = await httpResponse.Content.ReadAsStreamAsync();
+
+        try
+        {
+            return await System.Text.Json.JsonSerializer.DeserializeAsync<ProjectDTO>(contentStream, 
+                new System.Text.Json.JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = false
+                });
+        }
+        catch (JsonException) {
+            consoleMessage = "Error deserializing JSON";
+        }
+    }
+    else {
+        consoleMessage = "HTTP Response was invalid and cannot be deserialized.";
+    }
+    return null;
+
+}
+}

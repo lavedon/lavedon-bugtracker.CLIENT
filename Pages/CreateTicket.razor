@@ -1,0 +1,59 @@
+@page "/createticket"
+@attribute [Authorize]
+@using Client.Services
+@using Client.Models
+
+@inject IEntityService EntityService
+@inject ILocalStorageService LocalStorage
+@inject IHttpService HttpService
+@inject IConfiguration Configuration
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Create a Ticket</PageTitle>
+
+<h1>Create a Ticket</h1>
+
+<EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
+    <div class="col-md-12 mb-3">
+        <label for="Name">Title</label>
+        <InputText id="Name" @bind-Value="ticketDTO.Name" class="form-control" />
+    </div>
+    <div class="col-md-12 mb-3">
+        <label for="Description">Description</label>
+        <InputText id="Description" @bind-Value="ticketDTO.Description" class="form-control" />
+    </div>
+    <div class="col-md-12 mb-3">
+        <label for="Project">Project</label>
+        <InputText id="Project" @bind-Value="ticketDTO.Project" class="form-control" />
+    </div>
+    <div class="col-md-12 mb-3">
+        <label for="UserAssigned">User Assigned</label>
+        <InputText id="UserAssigned" @bind-Value="ticketDTO.UserAssigned" class="form-control" />
+    </div>
+        <button type="submit" class="btn btn-primary btn-large" >Create Ticket</button>
+    <ValidationSummary />
+</EditForm>
+
+@code {
+    private CreateTicketDTO ticketDTO = new CreateTicketDTO();
+    private EditContext EditContext;
+    private string currentUserName;
+
+    protected async override void OnInitialized()
+    {
+        EditContext = new EditContext(ticketDTO);
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
+    }
+
+    private void HandleSubmit()
+    {
+            ticketDTO.UserCreated = currentUserName;
+            EntityService.CreateTicket(ticketDTO);
+            ticketDTO.Name = string.Empty;
+            ticketDTO.Description = string.Empty;
+            ticketDTO.Project = string.Empty;
+            ticketDTO.UserAssigned = string.Empty;
+    }
+}

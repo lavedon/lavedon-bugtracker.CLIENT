@@ -1,0 +1,94 @@
+@layout SplashLayout
+@page "/login"
+@page "/"
+
+@using Client.Static
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthStateProvider
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager NavigationManager
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  </head>
+
+  <body>
+    <div class="row">
+
+    <div class="card col-md-6 offset-md-3">
+      <div class="text-center mb-0">
+        <img class="mb-4" src="inverted_bug_logo.png" alt="" width="72" height="72">
+        <h1 class="h2 mb-3 font-weight-bold" style="color: white; text-align:center;">Select a Demo Account</h1>
+      </div>
+
+      <div class="col-md-12 offset-md-3">
+      <div class="row">
+              <button class="btn btn-lg btn-primary mx-2 w-25" type="submit" @onclick="PopulateAdmin">Admin</button>
+              <button class="btn btn-lg btn-danger mx-2 w-25" type="submit" @onclick="PopulateStandard">Standard</button>
+      </div>
+      </div>
+      <div class="cold-md-8 offset-md-1">
+      <div class="row">
+            <EditForm Model="user" OnSubmit="HandleLogin">
+                <label for=username>Username</label>
+                <InputText @bind-Value="user.Username" />
+                <label for=password>Password</label>
+                <InputText @bind-Value="user.Password" type="password" />
+                <button type="submit" class="btn btn-primary">Login</button>
+            </EditForm>
+        </div>
+        </div>
+      </div>
+      <div>
+    </div>
+    </div>
+
+  </body>
+</html>
+
+@code {
+    UserLoginDTO user = new UserLoginDTO();
+
+    async Task OnInitialized()
+    {
+        user.Username = "admin";
+        user.Password = "admin";
+        try {
+            await LocalStorage.RemoveItemAsync("token");
+            await AuthStateProvider.GetAuthenticationStateAsync();
+        }
+        catch {
+            // do nothing
+        }
+    }
+
+    async Task HandleLogin()
+    {
+//      var result = await Http.PostAsJsonAsync("https://localhost:7266/api/login", user);
+        var result = await Http.PostAsJsonAsync(APIEndpoints.s_login, user);
+        var token = await result.Content.ReadAsStringAsync();
+        await LocalStorage.SetItemAsync("token", token);
+        await LocalStorage.SetItemAsync("username", user.Username);
+        await LocalStorage.SetItemAsync("password", user.Password);
+
+        await AuthStateProvider.GetAuthenticationStateAsync();
+        NavigationManager.NavigateTo("/tickets");
+    }
+
+    async void PopulateAdmin()
+    {
+        user.Username = "Picard";
+        user.Password = "password1";
+    }
+    async void PopulateStandard()
+    {
+        user.Username = "Luke";
+        user.Password = "password2";
+    }
+
+}

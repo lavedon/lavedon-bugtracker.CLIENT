@@ -1,0 +1,52 @@
+@page "/tickets"
+@using Client.Services
+@attribute [Authorize]
+@inject IEntityService EntityService
+@inject ILocalStorageService LocalStorage
+
+<PageTitle>List of Tickets</PageTitle>
+
+@if(!string.IsNullOrEmpty(currentUserName))
+{
+    <h1>Welcome @currentUserName!</h1>
+}
+
+<h4>List of Tickets</h4>
+<div class="col-md-12 mb-3">
+@if (EntityService.Tickets == null)
+{
+    <h1><em>Loading...</em></h1>
+}
+else {
+<table class="table">
+   <thead>
+           <th>Ticket Name</th>
+           <th>Description</th>
+           <th>Project</th>
+           <th>Assigned To</th>
+           <th>Ticket Created By</th>
+   </thead> 
+   <tbody>
+   @foreach(var ticket in EntityService.Tickets) {
+       <tr>
+           <td>@ticket.Name</td>
+           <td>@ticket.Description</td>
+           <td>@ticket.Project.Name</td>
+           <td>@ticket.UserAssigned.Username</td>
+           <td>@ticket.UserCreated.Username</td>
+       </tr>
+   }
+    </tbody>
+</table>
+}
+</div>
+<button class="btn btn-primary" @onclick="EntityService.GetUsers">Refresh List of Tickets</button>
+@code {
+    private string currentUserName = string.Empty;
+    protected async override void OnInitialized() 
+    {
+        currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
+        await this.EntityService.GetTickets();
+        StateHasChanged();
+    }
+}

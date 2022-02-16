@@ -1,0 +1,37 @@
+@page "/users"
+@using Client.Services
+@inject IEntityService EntityService
+
+<PageTitle>List of Users</PageTitle>
+
+<h1>List of Users</h1>
+<div class="col-md-12 mb-3">
+    <button class="btn btn-primary" @onclick="EntityService.GetUsers">Refresh List of Users</button>
+@if (EntityService.Users == null)
+{
+    <h1><em>Loading...</em></h1>
+}
+else {
+<table class="table">
+   <thead>
+           <th>Name</th>
+           <th>Role</th>
+   </thead> 
+   <tbody>
+   @foreach(var user in EntityService.Users) {
+       <tr>
+           <td>@user.username</td>
+           <td>@user.role</td>
+       </tr>
+   }
+    </tbody>
+</table>
+}
+</div>
+@code {
+    protected async override void OnInitialized() 
+    {
+        await this.EntityService.GetUsers();
+        StateHasChanged();
+    }
+}
