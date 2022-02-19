@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj",
+  "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj",
   "Configuration": {
     "ConfigurationName": "Default",
     "LanguageVersion": "6.0",
@@ -8,35 +8,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -246654001,
+        "HashCode": -1360774716,
         "Kind": "Components.Component",
-        "Name": "Client.Pages.Login",
+        "Name": "Client.App",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Login"
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Login"
+          "Common.TypeName": "Client.App"
         }
       },
       {
-        "HashCode": -2010237384,
+        "HashCode": 620663355,
         "Kind": "Components.Component",
-        "Name": "Client.Pages.Login",
+        "Name": "Client.App",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Client.Pages.Login"
+            "TagName": "Client.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Login",
+          "Common.TypeName": "Client.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -70,39 +70,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 788014735,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.CreateTicket",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CreateTicket"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.CreateTicket"
-        }
-      },
-      {
-        "HashCode": 16019707,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.CreateTicket",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.CreateTicket"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.CreateTicket",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -173,6 +140,39 @@
         }
       },
       {
+        "HashCode": -246654001,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Login",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Login"
+        }
+      },
+      {
+        "HashCode": -2010237384,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Login",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 466193811,
         "Kind": "Components.Component",
         "Name": "Client.Pages.LoginLogoutButton",
@@ -202,39 +202,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Pages.LoginLogoutButton",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 187518356,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Projects",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Projects"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Projects"
-        }
-      },
-      {
-        "HashCode": -2051449557,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Projects",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Projects"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Projects",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -272,39 +239,6 @@
         }
       },
       {
-        "HashCode": 1704312898,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Tickets",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tickets"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Tickets"
-        }
-      },
-      {
-        "HashCode": 1598681905,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Tickets",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Tickets"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Tickets",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -920752623,
         "Kind": "Components.Component",
         "Name": "Client.Pages.Users",
@@ -338,35 +272,101 @@
         }
       },
       {
-        "HashCode": -1360774716,
+        "HashCode": 1704312898,
         "Kind": "Components.Component",
-        "Name": "Client.App",
+        "Name": "Client.Pages.Tickets",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Tickets"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.App"
+          "Common.TypeName": "Client.Pages.Tickets"
         }
       },
       {
-        "HashCode": 620663355,
+        "HashCode": 1598681905,
         "Kind": "Components.Component",
-        "Name": "Client.App",
+        "Name": "Client.Pages.Tickets",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Client.App"
+            "TagName": "Client.Pages.Tickets"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.App",
+          "Common.TypeName": "Client.Pages.Tickets",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 187518356,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Projects",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Projects"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Projects"
+        }
+      },
+      {
+        "HashCode": -2051449557,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Projects",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Projects"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Projects",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 788014735,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.CreateTicket",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CreateTicket"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.CreateTicket"
+        }
+      },
+      {
+        "HashCode": 16019707,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.CreateTicket",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.CreateTicket"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.CreateTicket",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15197,83 +15197,83 @@
   "RootNamespace": "Client",
   "Documents": [
     {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Shared\\SplashLayout.razor",
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Shared\\SplashLayout.razor",
       "TargetPath": "Shared\\SplashLayout.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\LoginLogoutButton.razor",
-      "TargetPath": "Pages\\LoginLogoutButton.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\CreateTicket.razor",
-      "TargetPath": "Pages\\CreateTicket.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Projects.razor",
-      "TargetPath": "Pages\\Projects.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Shared\\NavMenu.razor",
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Index.razor",
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\CreateTicket.razor",
+      "TargetPath": "Pages\\CreateTicket.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Users.razor",
-      "TargetPath": "Pages\\Users.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Login.razor",
-      "TargetPath": "Pages\\Login.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Splash Pages\\Splash-DemoAccounts.razor",
-      "TargetPath": "Pages\\Splash Pages\\Splash-DemoAccounts.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Pages\\Tickets.razor",
-      "TargetPath": "Pages\\Tickets.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\_Imports.razor",
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Shared\\MainLayout.razor",
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\App.razor",
-      "TargetPath": "App.razor",
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Tickets.razor",
+      "TargetPath": "Pages\\Tickets.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Splash Pages\\Splash-DemoAccounts.razor",
+      "TargetPath": "Pages\\Splash Pages\\Splash-DemoAccounts.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Counter.razor",
+      "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Users.razor",
+      "TargetPath": "Pages\\Users.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\FetchData.razor",
+      "TargetPath": "Pages\\FetchData.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\LoginLogoutButton.razor",
+      "TargetPath": "Pages\\LoginLogoutButton.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Pages\\Projects.razor",
+      "TargetPath": "Pages\\Projects.razor",
       "FileKind": "component"
     }
   ],

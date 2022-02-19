@@ -24,13 +24,20 @@
     </div>
     <div class="col-md-12 mb-3">
         <label for="Project">Project</label>
-        <InputText id="Project" @bind-Value="ticketDTO.Project" class="form-control" />
+        <br />
+    <InputSelect @bind-Value="ticketDTO.Project">
+        @foreach (var value in EntityService.ProjectsWithUsers)
+        {
+            <option>@value.name.ToString()</option>
+        }
+    </InputSelect>
     </div>
     <div class="col-md-12 mb-3">
         <label for="UserAssigned">User Assigned</label>
         <InputText id="UserAssigned" @bind-Value="ticketDTO.UserAssigned" class="form-control" />
     </div>
-        <button type="submit" class="btn btn-primary btn-large" >Create Ticket</button>
+    
+        <button type="submit" class="btn btn-primary btn-large">Create Ticket</button>
     <ValidationSummary />
 </EditForm>
 
@@ -39,12 +46,16 @@
     private EditContext EditContext;
     private string currentUserName;
 
+
     protected async override void OnInitialized()
     {
         EditContext = new EditContext(ticketDTO);
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
+        
+        await EntityService.GetProjects();
+        StateHasChanged();
     }
 
     private void HandleSubmit()

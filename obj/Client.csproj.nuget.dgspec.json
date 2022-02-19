@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj": {}
+    "C:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj": {}
   },
   "projects": {
-    "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj": {
+    "C:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj",
+        "projectPath": "C:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\obj\\",
+        "outputPath": "C:\\my-coding-projects\\BugTracker Blazor Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

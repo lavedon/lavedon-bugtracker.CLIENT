@@ -3608,11 +3608,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj",
+      "projectUniqueName": "c:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\Client.csproj",
+      "projectPath": "c:\\my-coding-projects\\BugTracker Blazor Client\\Client.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\my-coding-projects\\BugTracker Portfolio Project\\Client\\obj\\",
+      "outputPath": "c:\\my-coding-projects\\BugTracker Blazor Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
