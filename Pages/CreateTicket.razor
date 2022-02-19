@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-12 mb-3">
         <label for="Description">Description</label>
-        <InputText id="Description" @bind-Value="ticketDTO.Description" class="form-control" />
+        <InputTextArea id="Description" @bind-Value="ticketDTO.Description" class="form-control" />
     </div>
     <div class="col-md-12 mb-3">
         <label for="Project">Project</label>
@@ -33,8 +33,23 @@
     </InputSelect>
     </div>
     <div class="col-md-12 mb-3">
-        <label for="UserAssigned">User Assigned</label>
-        <InputText id="UserAssigned" @bind-Value="ticketDTO.UserAssigned" class="form-control" />
+        <label for="UserAssigned">Assign User:</label>
+        <br />
+        @if(EntityService.Users != null)
+        {
+            
+        
+        <InputSelect id="UserAssigned" @bind-Value="ticketDTO.UserAssigned">
+        @foreach (UserDTO user in EntityService.Users)
+        {
+            <option>@user.username.ToString()</option>
+        }
+        </InputSelect>
+        } 
+        else {
+            <InputText id="UserAssigned" @bind-Value="ticketDTO.UserAssigned"></InputText>
+        }
+    
     </div>
     
         <button type="submit" class="btn btn-primary btn-large">Create Ticket</button>
@@ -53,8 +68,9 @@
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
-        
+
         await EntityService.GetProjects();
+        await EntityService.GetUsers();
         StateHasChanged();
     }
 
