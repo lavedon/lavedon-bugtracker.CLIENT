@@ -2129,7 +2129,6 @@ C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\De
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\wwwroot\_framework\Client.pdb.gz
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\Client.staticwebassets.runtime.json
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\Client.dll
-C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\ref\Client.dll
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\Client.pdb
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\Blazored.LocalStorage.dll
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\bin\Debug\net6.0\BlazorStyled.dll
@@ -2563,3 +2562,4 @@ C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\obj\De
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\obj\Debug\net6.0\Client.dll
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\obj\Debug\net6.0\ref\Client.dll
 C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\obj\Debug\net6.0\Client.pdb
+C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\obj\Debug\net6.0\refint\Client.dll
