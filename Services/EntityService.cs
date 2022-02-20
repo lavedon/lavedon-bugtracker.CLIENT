@@ -32,6 +32,13 @@ public class EntityService : IEntityService
         // await httpService.Post<ProjectDTO>("https://localhost:7266/api/createproject", project);
         await httpService.Post<ProjectDTO>(APIEndpoints.s_createproject, project);
     }
+
+    public async Task DeleteProject(int projectId)
+    {
+        HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
+        // await httpService.Delete<ProjectDTO>($"https://localhost:7266/api/deleteproject/{projectId}");
+        await httpService.Get<int>($"{APIEndpoints.s_deleteproject}/{projectId}");
+    }
     public async Task GetProjects()
     {
 
@@ -62,6 +69,13 @@ public class EntityService : IEntityService
         HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
         // await httpService.Post<CreateTicketDTO>("https://localhost:7266/api/createticket", ticket);
         await httpService.Post<CreateTicketDTO>(APIEndpoints.s_createticket, ticket);
+    }
+
+    public async Task DeleteTicket(int ticketId)
+    {
+        HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
+        // await httpService.Delete<int>("https://localhost:7266/api/deleteticket/" + ticketId);
+        await httpService.Get<int>(APIEndpoints.s_deleteticket + "/" + ticketId);
     }
 
     public async Task GetTickets()

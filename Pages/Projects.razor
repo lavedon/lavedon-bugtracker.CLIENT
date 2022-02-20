@@ -24,6 +24,7 @@
     <h1><em>Loading...</em></h1>
 }
 else {
+<h2>Only Admin User's May Delete a Project</h2>
 <table class="table">
     <thead>
         <tr>
@@ -38,7 +39,7 @@ else {
                 <tr>
                     <td>@project.name</td>
                     <td>@project.description</td>
-                    <td>@project.userCreated.username</td>
+                    <td>@project.userCreated.username <button class="btn btn-outline-danger btn-sm" title="Delete ticket" @onclick="@(()=>DeleteProject(project))"><span class="oi oi-trash"></span></button></td>
                 </tr>
             }
     </tbody>
@@ -70,6 +71,7 @@ else {
 </NotAuthorized>
 </AuthorizeView>
 @code {
+
     private static string consoleMessage = "";
     private ProjectDTO projectDTO = new ProjectDTO();
     // private List<ProjectDTO> projects = new List<ProjectDTO>();
@@ -78,6 +80,13 @@ else {
     private string projectJson;
     private string currentUserName = string.Empty;
     private List<ProjectWithUserDTO> currentProjects = new List<ProjectWithUserDTO>();
+
+    private async Task DeleteProject(ProjectWithUserDTO project)
+    {
+        await EntityService.DeleteProject(project.id);
+        await EntityService.GetProjects();
+        StateHasChanged();
+    }
 
     protected async override void OnInitialized()
     {

@@ -1,5 +1,6 @@
 @page "/tickets"
 @using Client.Services
+@using Client.Models
 @attribute [Authorize]
 @inject IEntityService EntityService
 @inject ILocalStorageService LocalStorage
@@ -33,7 +34,7 @@ else {
            <td>@ticket.Description</td>
            <td>@ticket.Project.Name</td>
            <td>@ticket.UserAssigned.Username</td>
-           <td>@ticket.UserCreated.Username</td>
+           <td>@ticket.UserCreated.Username <button class="btn btn-outline-danger btn-sm" title="Delete ticket" @onclick="@(()=>DeleteTicket(ticket))"><span class="oi oi-trash"></span></button></td>
        </tr>
    }
     </tbody>
@@ -43,6 +44,13 @@ else {
 <button class="btn btn-primary" @onclick="EntityService.GetUsers">Refresh List of Tickets</button>
 @code {
     private string currentUserName = string.Empty;
+
+    private async Task DeleteTicket(TicketDTO ticket)
+    {
+        await EntityService.DeleteTicket(ticket.Id);
+        await EntityService.GetTickets();
+        StateHasChanged();
+    }
     protected async override void OnInitialized() 
     {
         currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");

@@ -239,39 +239,6 @@
         }
       },
       {
-        "HashCode": 187518356,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Projects",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Projects"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Projects"
-        }
-      },
-      {
-        "HashCode": -2051449557,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Projects",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Projects"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Projects",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1072207356,
         "Kind": "Components.Component",
         "Name": "Client.Pages.Splash_Pages.Splash_DemoAccounts",
@@ -301,6 +268,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Pages.Splash_Pages.Splash_DemoAccounts",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -920752623,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Users",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Users"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Users"
+        }
+      },
+      {
+        "HashCode": 1117843364,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Users",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Users"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Users",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -338,35 +338,35 @@
         }
       },
       {
-        "HashCode": -920752623,
+        "HashCode": 187518356,
         "Kind": "Components.Component",
-        "Name": "Client.Pages.Users",
+        "Name": "Client.Pages.Projects",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Users"
+            "TagName": "Projects"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Users"
+          "Common.TypeName": "Client.Pages.Projects"
         }
       },
       {
-        "HashCode": 1117843364,
+        "HashCode": -2051449557,
         "Kind": "Components.Component",
-        "Name": "Client.Pages.Users",
+        "Name": "Client.Pages.Projects",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Client.Pages.Users"
+            "TagName": "Client.Pages.Projects"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Users",
+          "Common.TypeName": "Client.Pages.Projects",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
