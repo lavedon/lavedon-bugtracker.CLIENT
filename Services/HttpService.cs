@@ -21,6 +21,14 @@ public class HttpService : IHttpService
     private NavigationManager _navigationManager;
     private ILocalStorageService _localStorageService;
     private IConfiguration _configuration;
+
+    private enum RequestMethods
+    {
+        Get,
+        Post,
+        Put,
+        Delete,
+    }
     
     public HttpService(
         HttpClient httpClient,
@@ -37,7 +45,13 @@ public class HttpService : IHttpService
     {
         
         HttpClient httpClient = new HttpClient();
-        return await sendRequest<T>(uri, httpClient);
+        return await sendRequest<T>(uri, httpClient, RequestMethods.Get);
+    }
+
+    public async Task<T> Delete<T>(string uri)
+    {
+        HttpClient httpClient = new HttpClient();
+        return await sendRequest<T>(uri, httpClient, RequestMethods.Delete);
     }
 
     public async Task<T> Post<T>(string uri, object value)
@@ -54,16 +68,34 @@ public class HttpService : IHttpService
     }
 
 
-    private async Task<T> sendRequest<T>(string uri, HttpClient _http)
+    private async Task<T> sendRequest<T>(string uri, HttpClient _http, RequestMethods requestMethods = RequestMethods.Get)
     {
         string token = await _localStorageService.GetItemAsync<string>("token");
+        
 
         if (!string.IsNullOrEmpty(token))
         {
 
             _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.Trim('"'));
-            var response = await _http.GetFromJsonAsync<T>(uri);
-            return response;
+            switch (requestMethods)
+            {
+                case RequestMethods.Get:
+                {
+                        var response = await _http.GetFromJsonAsync<T>(uri);
+                        return response;
+                        break;
+                }
+                case RequestMethods.Delete:
+                {
+                        var response = await _http.DeleteAsync(uri);
+                        return default;
+                        break;
+
+                }
+                default: break;
+            }
+            return default;
+ 
         }
         else
         {

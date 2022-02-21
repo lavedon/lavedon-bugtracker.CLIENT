@@ -37,7 +37,7 @@ public class EntityService : IEntityService
     {
         HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
         // await httpService.Delete<ProjectDTO>($"https://localhost:7266/api/deleteproject/{projectId}");
-        await httpService.Get<int>($"{APIEndpoints.s_deleteproject}/{projectId}");
+        await httpService.Delete<int>($"{APIEndpoints.s_deleteproject}/{projectId}");
     }
     public async Task GetProjects()
     {
