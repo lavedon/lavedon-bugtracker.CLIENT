@@ -23,26 +23,24 @@
         <InputTextArea id="Description" @bind-Value="ticketDTO.Description" class="form-control" />
     </div>
     <div class="col-md-12 mb-3">
-        <label for="Project">Project</label>
+        <label for="project">Project</label>
         <br />
-    <InputSelect @bind-Value="ticketDTO.Project">
+    <InputSelect id="project" @bind-Value="ticketDTO.Project">
         @foreach (var value in EntityService.ProjectsWithUsers)
         {
-            <option>@value.name.ToString()</option>
+            <option value="@value.name">@value.name</option>
         }
     </InputSelect>
     </div>
     <div class="col-md-12 mb-3">
-        <label for="UserAssigned">Assign User:</label>
+        <label for="userAssigned">Assign User:</label>
         <br />
         @if(EntityService.Users != null)
         {
-            
-        
-        <InputSelect id="UserAssigned" @bind-Value="ticketDTO.UserAssigned">
+        <InputSelect id="userAssigned" @bind-Value="ticketDTO.UserAssigned">
         @foreach (UserDTO user in EntityService.Users)
         {
-            <option>@user.username.ToString()</option>
+            <option value="@user.username">@user.username.ToString()</option>
         }
         </InputSelect>
         } 
@@ -60,6 +58,8 @@
     private CreateTicketDTO ticketDTO = new CreateTicketDTO();
     private EditContext EditContext;
     private string currentUserName;
+    private string userAssigned;
+    private string project;
 
 
     protected async override void OnInitialized()
@@ -77,7 +77,17 @@
     private void HandleSubmit()
     {
             ticketDTO.UserCreated = currentUserName;
+            if (ticketDTO.Project is null)
+            {
+                ticketDTO.Project = EntityService.ProjectsWithUsers[0].name;
+            }
+
+            if (ticketDTO.UserAssigned is null)
+            {
+                ticketDTO.UserAssigned = EntityService.Users[0].username;            }
+
             EntityService.CreateTicket(ticketDTO);
+
             ticketDTO.Name = string.Empty;
             ticketDTO.Description = string.Empty;
             ticketDTO.Project = string.Empty;

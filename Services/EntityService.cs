@@ -75,7 +75,7 @@ public class EntityService : IEntityService
     {
         HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
         // await httpService.Delete<int>("https://localhost:7266/api/deleteticket/" + ticketId);
-        await httpService.Get<int>(APIEndpoints.s_deleteticket + "/" + ticketId);
+        await httpService.Delete<int>(APIEndpoints.s_deleteticket + "/" + ticketId);
     }
 
     public async Task GetTickets()
