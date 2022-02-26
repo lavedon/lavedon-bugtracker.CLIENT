@@ -21,13 +21,16 @@ public class CustomAuthStateProvider : AuthenticationStateProvider
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
         string token = await _localStorage.GetItemAsStringAsync("token");
+        token = token.Replace("\"", "");
+        token = token.Replace("'", "");
+
 
         var identity = new ClaimsIdentity();
 
         if (!string.IsNullOrEmpty(token))
         {
             identity = new ClaimsIdentity(ParseClaimsFromJwt(token), "jwt");
-            _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.Replace("\"",""));
+            _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 
         var user = new ClaimsPrincipal(identity);
