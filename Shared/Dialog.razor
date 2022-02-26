@@ -1,0 +1,28 @@
+@if (Show)
+{
+    <div class="dialog-container">
+        <div class="dialog">
+            <div class="dialog-title"></div>
+            <div class="dialog-body"></div>
+            <h1>TEST</h1>
+            <div class="dialog-buttons">
+                <button class="btn btn-dark mr-2" @onclick="OnOk">
+                    OK
+                </button>
+                <button class="btn btn-danger" @onclick="OnCancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool Show { get; set; }
+
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnOk { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnCancel { get; set; }
+}

@@ -520,6 +520,95 @@
         }
       },
       {
+        "HashCode": 399252888,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.Dialog",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Dialog"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Show",
+            "TypeName": "System.Boolean",
+            "Metadata": {
+              "Common.PropertyName": "Show"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnOk",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnOk",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnCancel",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnCancel",
+              "Components.EventCallback": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.Dialog"
+        }
+      },
+      {
+        "HashCode": -1380545948,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.Dialog",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Shared.Dialog"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Show",
+            "TypeName": "System.Boolean",
+            "Metadata": {
+              "Common.PropertyName": "Show"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnOk",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnOk",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnCancel",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnCancel",
+              "Components.EventCallback": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.Dialog",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -2100562517,
         "Kind": "Components.Component",
         "Name": "Client.Shared.MainLayout",
@@ -15269,6 +15358,11 @@
     {
       "FilePath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Shared\\SplashLayout.razor",
       "TargetPath": "Shared\\SplashLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Shared\\Dialog.razor",
+      "TargetPath": "Shared\\Dialog.razor",
       "FileKind": "component"
     },
     {

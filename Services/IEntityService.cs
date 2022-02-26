@@ -4,7 +4,7 @@ namespace Client.Services;
 
 public interface IEntityService
 {
-    public List<ProjectWithUserDTO> ProjectsWithUsers { get; set; }
+    public List<ProjectWithUserDTO>? ProjectsWithUsers { get; set; } 
     public List<UserDTO> Users { get; set; }
 
     public List<TicketDTO> Tickets { get; set; }

@@ -25,12 +25,16 @@
     <div class="col-md-12 mb-3">
         <label for="project">Project</label>
         <br />
+    @if(EntityService.ProjectsWithUsers is not null)
+    {
     <InputSelect id="project" @bind-Value="ticketDTO.Project">
-        @foreach (var value in EntityService.ProjectsWithUsers)
+        @foreach (var value in EntityService.ProjectsWithUsers!)
         {
             <option value="@value.name">@value.name</option>
         }
     </InputSelect>
+    } 
+       
     </div>
     <div class="col-md-12 mb-3">
         <label for="userAssigned">Assign User:</label>
@@ -56,10 +60,10 @@
 
 @code {
     private CreateTicketDTO ticketDTO = new CreateTicketDTO();
-    private EditContext EditContext;
-    private string currentUserName;
-    private string userAssigned;
-    private string project;
+    private EditContext? EditContext;
+    private string currentUserName = ""; 
+    private string userAssigned = "";
+    private string project = "";
 
 
     protected async override void OnInitialized()
