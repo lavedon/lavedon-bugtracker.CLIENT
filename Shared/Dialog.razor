@@ -2,8 +2,11 @@
 {
     <div class="dialog-container">
         <div class="dialog">
-            <div class="dialog-title"></div>
-            <div class="dialog-body"></div>
+            <div class="dialog-title">Title: @Title</div>
+            <div class="dialog-body">Ticket Title: @Title
+                <br />
+                Ticket Description: @Description
+            </div>
             <h1>TEST</h1>
             <div class="dialog-buttons">
                 <button class="btn btn-dark mr-2" @onclick="OnOk">
@@ -20,6 +23,11 @@
 @code {
     [Parameter] public bool Show { get; set; }
 
+    [Parameter] 
+    public RenderFragment Title { get; set; }
+
+    [Parameter] 
+    public RenderFragment Description { get; set; }
 
     [Parameter]
     public EventCallback<MouseEventArgs> OnOk { get; set; }

@@ -82,24 +82,24 @@ public class HttpService : IHttpService
                 case RequestMethods.Get:
                 {
                         var response = await _http.GetFromJsonAsync<T>(uri);
-                        return response;
+                        return response!;
                         break;
                 }
                 case RequestMethods.Delete:
                 {
                         var response = await _http.DeleteAsync(uri);
-                        return default;
+                        return default!;
                         break;
 
                 }
                 default: break;
             }
-            return default;
+            return default!;
  
         }
         else
         {
-            return default;
+            return default!;
         }
     }
 }

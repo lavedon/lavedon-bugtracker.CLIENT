@@ -7,6 +7,10 @@
 
 <PageTitle>List of Tickets</PageTitle>
 
+<Dialog Show="showDialog"
+        OnCancel="DialogCancelHandler"
+        OnOk="DialogOkHandler"><Title>Ticket Title - @ticketTitle</Title></Dialog>
+
 @if(!string.IsNullOrEmpty(currentUserName))
 {
     <h1>Welcome @currentUserName!</h1>
@@ -34,7 +38,11 @@ else {
            <td>@ticket.Description</td>
            <td>@ticket.Project.Name</td>
            <td>@ticket.UserAssigned.Username</td>
-           <td>@ticket.UserCreated.Username <button class="btn btn-outline-danger btn-sm" title="Delete ticket" @onclick="@(()=>DeleteTicket(ticket))"><span class="oi oi-trash"></span></button></td>
+           <td>@ticket.UserCreated.Username <button class="btn btn-outline-primary btn-sm" title="Edit Ticket" @onclick="@(()=>OpenDialog(ticket))">
+                   <span class="oi oi-pencil"></span></button>
+               <button class="btn btn-outline-danger btn-sm" title="Delete ticket" @onclick="@(()=>DeleteTicket(ticket))">
+                   <span class="oi oi-trash"></span></button>
+            </td>
        </tr>
    }
     </tbody>
@@ -44,7 +52,17 @@ else {
 <button class="btn btn-primary" @onclick="EntityService.GetUsers">Refresh List of Tickets</button>
 
 @code {
+    private bool showDialog = false;
     private string currentUserName = string.Empty;
+    public string ticketTitle = string.Empty;
+    public string ticketDescription = string.Empty;
+
+    private void OpenDialog(TicketDTO ticket)
+    {
+        showDialog = true;
+        ticketTitle = ticket.Name;
+        ticketDescription = ticket.Description;
+    }
 
     private async Task DeleteTicket(TicketDTO ticket)
     {
@@ -57,5 +75,15 @@ else {
         currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
         await this.EntityService.GetTickets();
         StateHasChanged();
+    }
+
+    private void DialogCancelHandler(MouseEventArgs e)
+    {
+        showDialog = false;
+    }
+
+    private void DialogOkHandler(MouseEventArgs e)
+    {
+        showDialog = false;
     }
 }
