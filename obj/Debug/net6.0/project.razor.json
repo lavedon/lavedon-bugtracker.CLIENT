@@ -74,39 +74,6 @@
         }
       },
       {
-        "HashCode": 788014735,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.CreateTicket",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CreateTicket"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.CreateTicket"
-        }
-      },
-      {
-        "HashCode": 16019707,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.CreateTicket",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.CreateTicket"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.CreateTicket",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1098663202,
         "Kind": "Components.Component",
         "Name": "Client.Pages.FetchData",
@@ -305,6 +272,39 @@
         }
       },
       {
+        "HashCode": 1704312898,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Tickets",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tickets"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Tickets"
+        }
+      },
+      {
+        "HashCode": 1598681905,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Tickets",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Tickets"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Tickets",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -920752623,
         "Kind": "Components.Component",
         "Name": "Client.Pages.Users",
@@ -338,35 +338,35 @@
         }
       },
       {
-        "HashCode": 1704312898,
+        "HashCode": 788014735,
         "Kind": "Components.Component",
-        "Name": "Client.Pages.Tickets",
+        "Name": "Client.Pages.CreateTicket",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Tickets"
+            "TagName": "CreateTicket"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Tickets"
+          "Common.TypeName": "Client.Pages.CreateTicket"
         }
       },
       {
-        "HashCode": 1598681905,
+        "HashCode": 16019707,
         "Kind": "Components.Component",
-        "Name": "Client.Pages.Tickets",
+        "Name": "Client.Pages.CreateTicket",
         "AssemblyName": "Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Client.Pages.Tickets"
+            "TagName": "Client.Pages.CreateTicket"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Tickets",
+          "Common.TypeName": "Client.Pages.CreateTicket",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -844,6 +844,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1475886502,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.CreateTicketForm",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CreateTicketForm"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentUserName",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserName"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.CreateTicketForm"
+        }
+      },
+      {
+        "HashCode": 1782632996,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.CreateTicketForm",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Shared.CreateTicketForm"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentUserName",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserName"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.CreateTicketForm",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15448,6 +15501,11 @@
     {
       "FilePath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Shared\\CreateTicketForm.razor",
+      "TargetPath": "Shared\\CreateTicketForm.razor",
       "FileKind": "component"
     },
     {

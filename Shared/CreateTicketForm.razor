@@ -1,17 +1,13 @@
-@page "/createticket"
-@attribute [Authorize]
 @using Client.Services
 @using Client.Models
 
 @inject IEntityService EntityService
-@inject ILocalStorageService LocalStorage
-@inject IHttpService HttpService
 @inject IConfiguration Configuration
-@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Create a Ticket</PageTitle>
 
 <h1>Create a Ticket</h1>
+<h1>Hi @CurrentUserName</h1>
 
 <EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
     <div class="col-md-12 mb-3">
@@ -57,21 +53,19 @@
         <button type="submit" class="btn btn-primary btn-large">Create Ticket</button>
     <ValidationSummary />
 </EditForm>
-<CreateTicketForm CurrentUserName=@currentUserName/>
 @code {
+
+    [Parameter] public string? CurrentUserName { get; set; }
     private CreateTicketDTO ticketDTO = new CreateTicketDTO();
     private EditContext? EditContext;
-    private string currentUserName = ""; 
     private string userAssigned = "";
     private string project = "";
 
 
     protected async override void OnInitialized()
     {
+        // pass in the current user
         EditContext = new EditContext(ticketDTO);
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authState.User;
-        currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
 
         await EntityService.GetProjects();
         await EntityService.GetUsers();
@@ -80,7 +74,7 @@
 
     private void HandleSubmit()
     {
-            ticketDTO.UserCreated = currentUserName;
+            ticketDTO.UserCreated = CurrentUserName;
             if (ticketDTO.Project is null)
             {
                 ticketDTO.Project = EntityService.ProjectsWithUsers[0].name;
@@ -88,8 +82,7 @@
 
             if (ticketDTO.UserAssigned is null)
             {
-                ticketDTO.UserAssigned = EntityService.Users[0].username;            
-            }
+                ticketDTO.UserAssigned = EntityService.Users[0].username;            }
 
             EntityService.CreateTicket(ticketDTO);
 
