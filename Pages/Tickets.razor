@@ -9,7 +9,9 @@
 
 <Dialog Show="showDialog"
         OnCancel="DialogCancelHandler"
-        OnOk="DialogOkHandler"><Title>Ticket Title - @ticketTitle</Title></Dialog>
+        OnOk="DialogOkHandler"><Title>Ticket Title - @ticketTitle</Title>
+        </Dialog>
+
 
 @if(!string.IsNullOrEmpty(currentUserName))
 {
@@ -56,12 +58,18 @@ else {
     private string currentUserName = string.Empty;
     public string ticketTitle = string.Empty;
     public string ticketDescription = string.Empty;
+    public string? ticketProject = string.Empty;
+    public string? ticketAssignedTo = string.Empty;
+    public string ticketCreatedBy = string.Empty;
 
     private void OpenDialog(TicketDTO ticket)
     {
         showDialog = true;
         ticketTitle = ticket.Name;
         ticketDescription = ticket.Description;
+        ticketProject = ticket.Project.Name!;
+        ticketAssignedTo = ticket.UserAssigned.Username;
+        ticketCreatedBy = ticket.UserCreated.Username!;
     }
 
     private async Task DeleteTicket(TicketDTO ticket)
