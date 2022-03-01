@@ -50,7 +50,8 @@ else {
 <Authorized Context="authComponentContext">
 <h2>Only Admin User's May Create a New Project</h2>
 <h4>You are authorized as Admin</h4>
-<CreateProjectForm />
+<CreateProjectForm UpdateProjects=@HandleProjectCreated/>
+
 </Authorized>
 <NotAuthorized>
     <h2>Only an Admin user may create a new project.</h2> 
@@ -70,6 +71,12 @@ else {
     private async Task DeleteProject(ProjectWithUserDTO project)
     {
         await EntityService.DeleteProject(project.id);
+        await EntityService.GetProjects();
+        StateHasChanged();
+    }
+
+    private async Task HandleProjectCreated()
+    {
         await EntityService.GetProjects();
         StateHasChanged();
     }

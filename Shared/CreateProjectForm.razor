@@ -23,6 +23,7 @@
 </div>
 
 @code {
+    [Parameter] public EventCallback<MouseEventArgs> UpdateProjects { get; set; }
     private ProjectDTO projectDTO = new ProjectDTO();
     private EditContext? EditContext;
     private string currentUserName = string.Empty;
@@ -53,11 +54,6 @@
         {
             Console.WriteLine("Form is Invalid...");
         }
-        await EntityService.GetProjects();
-        // @TODO Place a EventCallBack that tells the parent that the state has changed.
-        //     [Parameter] public EventCallback<string> OnClick { get; set; }
-        // https://chrissainty.com/3-ways-to-communicate-between-components-in-blazor/
-
-        StateHasChanged();
+        await UpdateProjects.InvokeAsync();
     }
 }
