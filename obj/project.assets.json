@@ -14,18 +14,6 @@
           "lib/net5.0/Blazored.LocalStorage.dll": {}
         }
       },
-      "BlazorStyled/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Components.Web": "5.0.0"
-        },
-        "compile": {
-          "lib/net5.0/BlazorStyled.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/BlazorStyled.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Authorization/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -714,18 +702,6 @@
         },
         "runtime": {
           "lib/net5.0/Blazored.LocalStorage.dll": {}
-        }
-      },
-      "BlazorStyled/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Components.Web": "5.0.0"
-        },
-        "compile": {
-          "lib/net5.0/BlazorStyled.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/BlazorStyled.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/6.0.1": {
@@ -1526,18 +1502,6 @@
         "icon.png",
         "lib/net5.0/Blazored.LocalStorage.dll",
         "lib/netstandard2.1/Blazored.LocalStorage.dll"
-      ]
-    },
-    "BlazorStyled/3.1.0": {
-      "sha512": "S6GQREciGtytQrE1KGexw4gjjKzT2UPIX7KBolzkuRIdkUGTi3YWaYZIkYuE81q8VwA8WU1jgmJ6lg2V4dY15Q==",
-      "type": "package",
-      "path": "blazorstyled/3.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "blazorstyled.3.1.0.nupkg.sha512",
-        "blazorstyled.nuspec",
-        "lib/net5.0/BlazorStyled.dll"
       ]
     },
     "Microsoft.AspNetCore.Authorization/6.0.1": {
@@ -3594,7 +3558,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BlazorStyled >= 3.1.0",
       "Blazored.LocalStorage >= 4.1.5",
       "Microsoft.AspNetCore.Components.Authorization >= 6.0.1",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.1",
@@ -3608,11 +3571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Client.csproj",
+      "projectUniqueName": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Client.csproj",
+      "projectPath": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Client.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\obj\\",
+      "outputPath": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3641,10 +3604,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "BlazorStyled": {
-            "target": "Package",
-            "version": "[3.1.0, )"
-          },
           "Blazored.LocalStorage": {
             "target": "Package",
             "version": "[4.1.5, )"

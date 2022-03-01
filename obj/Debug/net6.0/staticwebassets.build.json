@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K1GtYpy8I1K7uRlEPR9ZH1OSujRV5hQT36hoVyaZrf0=",
+  "Hash": "9X2IzYkuSkPakpjYdDPGYkVJGZLCcaLZu7VK/apcvoo=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -66,23 +66,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\User\\.nuget\\packages\\blazored.localstorage\\4.1.5\\lib\\net5.0\\Blazored.LocalStorage.dll"
-    },
-    {
-      "Identity": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorStyled.dll",
-      "SourceId": "Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/BlazorStyled.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\User\\.nuget\\packages\\blazorstyled\\3.1.0\\lib\\net5.0\\BlazorStyled.dll"
     },
     {
       "Identity": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Client.dll",
@@ -4197,23 +4180,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll"
-    },
-    {
-      "Identity": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\obj\\Debug\\net6.0\\build-gz\\9A1K4vgK.gz",
-      "SourceId": "Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/BlazorStyled.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorStyled.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorStyled.dll"
     },
     {
       "Identity": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\obj\\Debug\\net6.0\\build-gz\\9O0NcHmH.gz",

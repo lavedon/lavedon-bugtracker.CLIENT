@@ -1,0 +1,63 @@
+@using Client.Services
+@using Client.Models
+
+@inject ILocalStorageService LocalStorage
+@inject IConfiguration Configuration
+@inject IEntityService EntityService
+
+@namespace Client.Shared
+
+<div class="col-md-12">
+<EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
+    <div class="col-md-12 mb-3">
+        <label for="Name">Name</label>
+        <InputText id="Name" @bind-Value="projectDTO.Name" class="form-control" />
+    </div>
+    <div class="col-md-12 mb-3">
+        <label for="Description">Description</label>
+        <InputText id="Description" @bind-Value="projectDTO.Description" class="form-control" />
+    </div>
+        <button type="submit" class="btn btn-primary btn-large">Create Project</button>
+    <ValidationSummary />
+</EditForm>
+</div>
+
+@code {
+    private ProjectDTO projectDTO = new ProjectDTO();
+    private EditContext? EditContext;
+    private string currentUserName = string.Empty;
+
+    protected async override void OnInitialized()
+    {
+        currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
+        EditContext = new EditContext(projectDTO);
+        Console.WriteLine("Inside CreateProjectForm's OnInitialized()");
+        StateHasChanged();
+    }
+
+    private async void HandleSubmit()
+    {
+        if (EditContext.Validate())
+        {
+            projectDTO = EditContext.Model as ProjectDTO;
+            projectDTO.UserCreated = currentUserName;
+
+            Console.WriteLine("The user named " + projectDTO.UserCreated + " created this project.");
+
+            await EntityService.CreateProject(projectDTO);
+
+            projectDTO.Name = string.Empty;
+            projectDTO.Description = string.Empty;
+        }
+        else
+        {
+            Console.WriteLine("Form is Invalid...");
+        }
+        await EntityService.GetProjects();
+        // @TODO Place a EventCallBack that tells the parent that the state has changed.
+        //     [Parameter] public EventCallback<string> OnClick { get; set; }
+        // https://chrissainty.com/3-ways-to-communicate-between-components-in-blazor/
+
+        StateHasChanged();
+    }
+}

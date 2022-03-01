@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cuEsQ/8maOxrH+5LVc3+UescnTf+KzXCpPuTbmMTjMr5PADYM0nV50sY239CnYw0vaD1kGj5QCF4xP6eLeF/vA==",
+  "dgSpecHash": "z2A+yxScCO2wHZxFPnpZ3A377aBeCuG+IANf71mJLmf9cGWo2Amse9eyKPMbPN9VnvMYVt4JxiQivT+tiyLsZw==",
   "success": true,
   "projectFilePath": "C:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\blazored.localstorage\\4.1.5\\blazored.localstorage.4.1.5.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\blazorstyled\\3.1.0\\blazorstyled.3.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.1\\microsoft.aspnetcore.authorization.6.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.1\\microsoft.aspnetcore.components.6.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.1\\microsoft.aspnetcore.components.analyzers.6.0.1.nupkg.sha512",

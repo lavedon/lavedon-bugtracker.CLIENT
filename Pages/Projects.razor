@@ -3,6 +3,7 @@
 @using System.Net.Http.Headers
 @using Client.Services
 @using Client.Models
+@using Client.Shared
 @using Microsoft.AspNetCore.Components.Authorization
 @using System.Security.Claims;
 @inject HttpClient HttpClient
@@ -49,22 +50,7 @@ else {
 <Authorized Context="authComponentContext">
 <h2>Only Admin User's May Create a New Project</h2>
 <h4>You are authorized as Admin</h4>
-
-<EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
-    <div class="col-md-12 mb-3">
-        <label for="Name">Name</label>
-        <InputText id="Name" @bind-Value="projectDTO.Name" class="form-control" />
-    </div>
-    <div class="col-md-12 mb-3">
-        <label for="Description">Description</label>
-        <InputText id="Description" @bind-Value="projectDTO.Description" class="form-control" />
-    </div>
-        <button type="submit" class="btn btn-primary btn-large" >Create Project</button>
-    <ValidationSummary />
-</EditForm>
-<div class="col-md-12 mb-3">
-<button class="btn btn-danger" @onclick="EntityService.GetProjects">Force Refresh Project Data</button>
-</div>
+<CreateProjectForm />
 </Authorized>
 <NotAuthorized>
     <h2>Only an Admin user may create a new project.</h2> 
@@ -162,6 +148,5 @@ private static async Task<ProjectDTO> ProjectsFromJson(string uri, HttpClient ht
         consoleMessage = "HTTP Response was invalid and cannot be deserialized.";
     }
     return null;
-
-}
+    }
 }

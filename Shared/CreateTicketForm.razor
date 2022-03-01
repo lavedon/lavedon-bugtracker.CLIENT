@@ -4,8 +4,6 @@
 @inject IEntityService EntityService
 @inject IConfiguration Configuration
 
-<PageTitle>Create a Ticket</PageTitle>
-
 <h1>Ticket</h1>
 
 <EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
@@ -108,7 +106,8 @@
 
             if (ticketDTO.UserAssigned is null)
             {
-                ticketDTO.UserAssigned = EntityService.Users[0].username;            }
+                ticketDTO.UserAssigned = EntityService.Users[0].username;            
+            }
 
             EntityService.CreateTicket(ticketDTO);
 
