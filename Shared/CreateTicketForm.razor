@@ -6,8 +6,7 @@
 
 <PageTitle>Create a Ticket</PageTitle>
 
-<h1>Create a Ticket</h1>
-<h1>Hi @CurrentUserName</h1>
+<h1>Ticket</h1>
 
 <EditForm EditContext="@EditContext" class="row p-3" OnSubmit="@HandleSubmit">
     <div class="col-md-12 mb-3">
@@ -21,14 +20,18 @@
     <div class="col-md-12 mb-3">
         <label for="project">Project</label>
         <br />
-    @if(EntityService.ProjectsWithUsers is not null)
-    {
-    <InputSelect id="project" @bind-Value="ticketDTO.Project">
+        @if(EntityService.ProjectsWithUsers is not null)
+        {
+        <InputSelect id="project" @bind-Value="ticketDTO.Project">
+        @if (!string.IsNullOrEmpty(CurrentProjectAssigned))
+        {
+            <option value="">@CurrentProjectAssigned</option>
+        }
         @foreach (var value in EntityService.ProjectsWithUsers!)
         {
             <option value="@value.name">@value.name</option>
         }
-    </InputSelect>
+        </InputSelect>
     } 
        
     </div>
@@ -38,6 +41,10 @@
         @if(EntityService.Users != null)
         {
         <InputSelect id="userAssigned" @bind-Value="ticketDTO.UserAssigned">
+        @if (!string.IsNullOrEmpty(CurrentUserAssigned))
+        {
+            <option value="">@CurrentUserAssigned</option>
+        }
         @foreach (UserDTO user in EntityService.Users)
         {
             <option value="@user.username">@user.username.ToString()</option>
@@ -50,12 +57,29 @@
     
     </div>
     
-        <button type="submit" class="btn btn-primary btn-large">Create Ticket</button>
+        <button type="submit" class="btn btn-primary btn-large">@ButtonText</button>
     <ValidationSummary />
 </EditForm>
 @code {
+    [Parameter]
+    public string CurrentUserAssigned { get; set; } = string.Empty;
+    [Parameter]
+    public string CurrentProjectAssigned { get; set; } = string.Empty;
 
-    [Parameter] public string? CurrentUserName { get; set; }
+    [Parameter] 
+    public string ButtonText { get; set; } = "Create Ticket";
+
+    [Parameter]
+    public string CurrentUserName { get; set; } = string.Empty;
+    [Parameter]
+    public string PassedTitle { get; set; } = string.Empty;
+    [Parameter]
+    public string PassedDescription { get; set; } = string.Empty;
+
+    [Parameter]
+    public string PassedUserCreated { get; set; } = string.Empty;
+
+
     private CreateTicketDTO ticketDTO = new CreateTicketDTO();
     private EditContext? EditContext;
     private string userAssigned = "";
@@ -64,6 +88,8 @@
 
     protected async override void OnInitialized()
     {
+        ticketDTO.Name = PassedTitle;
+        ticketDTO.Description = PassedDescription;
         // pass in the current user
         EditContext = new EditContext(ticketDTO);
 

@@ -41,39 +41,6 @@
         }
       },
       {
-        "HashCode": -152288765,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Counter",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Counter"
-        }
-      },
-      {
-        "HashCode": -358542798,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Counter",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1098663202,
         "Kind": "Components.Component",
         "Name": "Client.Pages.FetchData",
@@ -206,39 +173,6 @@
         }
       },
       {
-        "HashCode": 187518356,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Projects",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Projects"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Projects"
-        }
-      },
-      {
-        "HashCode": -2051449557,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Projects",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Projects"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Projects",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1072207356,
         "Kind": "Components.Component",
         "Name": "Client.Pages.Splash_Pages.Splash_DemoAccounts",
@@ -268,39 +202,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Pages.Splash_Pages.Splash_DemoAccounts",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1704312898,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Tickets",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tickets"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Tickets"
-        }
-      },
-      {
-        "HashCode": 1598681905,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Tickets",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Tickets"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Tickets",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -338,6 +239,39 @@
         }
       },
       {
+        "HashCode": 187518356,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Projects",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Projects"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Projects"
+        }
+      },
+      {
+        "HashCode": -2051449557,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Projects",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Projects"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Projects",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 788014735,
         "Kind": "Components.Component",
         "Name": "Client.Pages.CreateTicket",
@@ -367,6 +301,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Pages.CreateTicket",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1704312898,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Tickets",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tickets"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Tickets"
+        }
+      },
+      {
+        "HashCode": 1598681905,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Tickets",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Tickets"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Tickets",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -520,205 +487,6 @@
         }
       },
       {
-        "HashCode": 1850350680,
-        "Kind": "Components.Component",
-        "Name": "Client.Shared.Dialog",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Dialog"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Show",
-            "TypeName": "System.Boolean",
-            "Metadata": {
-              "Common.PropertyName": "Show"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Metadata": {
-              "Common.PropertyName": "Title",
-              "Components.ChildContent": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Description",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Metadata": {
-              "Common.PropertyName": "Description",
-              "Components.ChildContent": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnOk",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
-            "Metadata": {
-              "Common.PropertyName": "OnOk",
-              "Components.EventCallback": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnCancel",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
-            "Metadata": {
-              "Common.PropertyName": "OnCancel",
-              "Components.EventCallback": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Shared.Dialog"
-        }
-      },
-      {
-        "HashCode": -1390790363,
-        "Kind": "Components.Component",
-        "Name": "Client.Shared.Dialog",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Shared.Dialog"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Show",
-            "TypeName": "System.Boolean",
-            "Metadata": {
-              "Common.PropertyName": "Show"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Metadata": {
-              "Common.PropertyName": "Title",
-              "Components.ChildContent": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "Description",
-            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
-            "Metadata": {
-              "Common.PropertyName": "Description",
-              "Components.ChildContent": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnOk",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
-            "Metadata": {
-              "Common.PropertyName": "OnOk",
-              "Components.EventCallback": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnCancel",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
-            "Metadata": {
-              "Common.PropertyName": "OnCancel",
-              "Components.EventCallback": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Shared.Dialog",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1501431561,
-        "Kind": "Components.ChildContent",
-        "Name": "Client.Shared.Dialog.Title",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Title",
-            "ParentTag": "Dialog"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "Client.Shared.Dialog.Title",
-          "Components.IsSpecialKind": "Components.ChildContent"
-        }
-      },
-      {
-        "HashCode": -320955940,
-        "Kind": "Components.ChildContent",
-        "Name": "Client.Shared.Dialog.Title",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Title",
-            "ParentTag": "Client.Shared.Dialog"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "Client.Shared.Dialog.Title",
-          "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -2023010153,
-        "Kind": "Components.ChildContent",
-        "Name": "Client.Shared.Dialog.Description",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Description",
-            "ParentTag": "Dialog"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "Client.Shared.Dialog.Description",
-          "Components.IsSpecialKind": "Components.ChildContent"
-        }
-      },
-      {
-        "HashCode": -2092286324,
-        "Kind": "Components.ChildContent",
-        "Name": "Client.Shared.Dialog.Description",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Description",
-            "ParentTag": "Client.Shared.Dialog"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.None",
-          "Common.TypeName": "Client.Shared.Dialog.Description",
-          "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -2100562517,
         "Kind": "Components.Component",
         "Name": "Client.Shared.MainLayout",
@@ -848,7 +616,206 @@
         }
       },
       {
-        "HashCode": -1475886502,
+        "HashCode": 378242626,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.Dialog",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Dialog"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Show",
+            "TypeName": "System.Boolean",
+            "Metadata": {
+              "Common.PropertyName": "Show"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Metadata": {
+              "Common.PropertyName": "Title",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnOk",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnOk",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnCancel",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnCancel",
+              "Components.EventCallback": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.Dialog"
+        }
+      },
+      {
+        "HashCode": -1773156894,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.Dialog",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Shared.Dialog"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Show",
+            "TypeName": "System.Boolean",
+            "Metadata": {
+              "Common.PropertyName": "Show"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Metadata": {
+              "Common.PropertyName": "Title",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnOk",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnOk",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "OnCancel",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "OnCancel",
+              "Components.EventCallback": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.Dialog",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1501431561,
+        "Kind": "Components.ChildContent",
+        "Name": "Client.Shared.Dialog.Title",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Title",
+            "ParentTag": "Dialog"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Client.Shared.Dialog.Title",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": -320955940,
+        "Kind": "Components.ChildContent",
+        "Name": "Client.Shared.Dialog.Title",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Title",
+            "ParentTag": "Client.Shared.Dialog"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Client.Shared.Dialog.Title",
+          "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 334429874,
+        "Kind": "Components.ChildContent",
+        "Name": "Client.Shared.Dialog.Body",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "Dialog"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Client.Shared.Dialog.Body",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": -617210886,
+        "Kind": "Components.ChildContent",
+        "Name": "Client.Shared.Dialog.Body",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "Client.Shared.Dialog"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "Client.Shared.Dialog.Body",
+          "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1807657132,
         "Kind": "Components.Component",
         "Name": "Client.Shared.CreateTicketForm",
         "AssemblyName": "Client",
@@ -861,10 +828,58 @@
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
+            "Name": "CurrentUserAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentProjectAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentProjectAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "ButtonText",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ButtonText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "CurrentUserName",
             "TypeName": "System.String",
             "Metadata": {
               "Common.PropertyName": "CurrentUserName"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedTitle",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedTitle"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedDescription",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedDescription"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedUserCreated",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedUserCreated"
             }
           }
         ],
@@ -874,7 +889,7 @@
         }
       },
       {
-        "HashCode": 1782632996,
+        "HashCode": 1890141325,
         "Kind": "Components.Component",
         "Name": "Client.Shared.CreateTicketForm",
         "AssemblyName": "Client",
@@ -887,10 +902,58 @@
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
+            "Name": "CurrentUserAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentProjectAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentProjectAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "ButtonText",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ButtonText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
             "Name": "CurrentUserName",
             "TypeName": "System.String",
             "Metadata": {
               "Common.PropertyName": "CurrentUserName"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedTitle",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedTitle"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedDescription",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedDescription"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedUserCreated",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedUserCreated"
             }
           }
         ],
@@ -15486,11 +15549,6 @@
     {
       "FilePath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\my-coding-projects\\Bug Tracker Multiple Repos\\BugTracker Blazor Client\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
     },
     {

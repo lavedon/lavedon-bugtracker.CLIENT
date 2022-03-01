@@ -1,4 +1,5 @@
-﻿namespace Client.Models;
+﻿#nullable disable warnings
+namespace Client.Models;
 
 public class UserCreated
 {
