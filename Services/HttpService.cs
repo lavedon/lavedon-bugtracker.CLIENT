@@ -1,3 +1,4 @@
+#nullable disable warnings
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -48,10 +49,23 @@ public class HttpService : IHttpService
         return await sendRequest<T>(uri, httpClient, RequestMethods.Get);
     }
 
+
     public async Task<T> Delete<T>(string uri)
     {
         HttpClient httpClient = new HttpClient();
         return await sendRequest<T>(uri, httpClient, RequestMethods.Delete);
+    }
+    public async Task<T> Put<T>(string uri, object value)
+    {
+        var requestMessage = new HttpRequestMessage(HttpMethod.Put, uri);
+        requestMessage.Content = new StringContent(JsonSerializer.Serialize(value), Encoding.UTF8, "application/json");
+        string token = await _localStorageService.GetItemAsync<string>("token");
+        requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.Trim('"'));
+        HttpClient httpClient = new HttpClient();
+        requestMessage.Method = HttpMethod.Put;
+
+        using var response = await httpClient.SendAsync(requestMessage);
+        return default;
     }
 
     public async Task<T> Post<T>(string uri, object value)
@@ -83,13 +97,11 @@ public class HttpService : IHttpService
                 {
                         var response = await _http.GetFromJsonAsync<T>(uri);
                         return response!;
-                        break;
                 }
                 case RequestMethods.Delete:
                 {
                         var response = await _http.DeleteAsync(uri);
                         return default!;
-                        break;
 
                 }
                 default: break;

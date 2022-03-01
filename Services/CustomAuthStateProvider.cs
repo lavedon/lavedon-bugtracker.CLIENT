@@ -1,3 +1,4 @@
+#nullable disable warnings
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
 using System.Text.Json;

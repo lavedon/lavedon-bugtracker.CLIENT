@@ -15,45 +15,91 @@
     </div>
     <div class="col-md-12 mb-3">
         <label for="Description">Description</label>
-        <InputText id="Description" @bind-Value="projectDTO.Description" class="form-control" />
+        <InputTextArea id="Description" @bind-Value="projectDTO.Description" class="form-control" />
     </div>
-        <button type="submit" class="btn btn-primary btn-large">Create Project</button>
+        <button type="submit" class="btn btn-primary btn-large">@buttonText</button>
     <ValidationSummary />
 </EditForm>
 </div>
 
 @code {
+    public enum EditOrCreate {
+        Create,
+        Edit
+    }
+
     [Parameter] public EventCallback<MouseEventArgs> UpdateProjects { get; set; }
+    [Parameter] public EditOrCreate SelectEditOrCreate { get; set; } = EditOrCreate.Create;
+    [Parameter] public string PassedName { get; set; } = string.Empty;
+    [Parameter] public string PassedDescription { get; set; } = string.Empty;
+
     private ProjectDTO projectDTO = new ProjectDTO();
-    private EditContext? EditContext;
+    private ProjectWithUserDTO projectWithUserDTO = new ProjectWithUserDTO();
+
+    private EditContext EditContext;
     private string currentUserName = string.Empty;
+    private string buttonText { get; set; } = "Create Project";
 
     protected async override void OnInitialized()
     {
+        EditContext = new EditContext(projectDTO);
+        if (SelectEditOrCreate == EditOrCreate.Edit)
+        {
+            buttonText = "Edit Project";
+        }
+
         currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
         EditContext = new EditContext(projectDTO);
+        projectDTO.Name = PassedName;
+        projectDTO.Description = PassedDescription;
         Console.WriteLine("Inside CreateProjectForm's OnInitialized()");
         StateHasChanged();
     }
 
     private async void HandleSubmit()
     {
-        if (EditContext.Validate())
+        if (SelectEditOrCreate == EditOrCreate.Create)
         {
-            projectDTO = EditContext.Model as ProjectDTO;
-            projectDTO.UserCreated = currentUserName;
+            if (EditContext.Validate())
+            {
+                Console.WriteLine("CreatedProjectForm Validated EditContext OK");
+                    projectDTO = EditContext.Model as ProjectDTO;
+                    projectDTO.UserCreated = currentUserName;
 
-            Console.WriteLine("The user named " + projectDTO.UserCreated + " created this project.");
+                    await EntityService.CreateProject(projectDTO);
 
-            await EntityService.CreateProject(projectDTO);
-
-            projectDTO.Name = string.Empty;
-            projectDTO.Description = string.Empty;
+                    projectDTO.Name = string.Empty;
+                    projectDTO.Description = string.Empty;
+            }
+            else
+            {
+                Console.WriteLine("Form is Invalid...");
+            }
+            await UpdateProjects.InvokeAsync();
         }
-        else
+
+        if (SelectEditOrCreate == EditOrCreate.Edit)
         {
-            Console.WriteLine("Form is Invalid...");
+                projectDTO = new ProjectDTO();
+                if (EditContext.Model is not null)
+                {
+                    projectDTO = EditContext.Model as ProjectDTO;
+                } 
+                else {
+                    return;
+                }
+
+                projectWithUserDTO.name = projectDTO.Name ?? string.Empty;
+                projectWithUserDTO.description = projectDTO.Description ?? string.Empty;
+
+                await EntityService.UpdateProject(projectWithUserDTO);
+
+                projectWithUserDTO.name = string.Empty;
+                projectWithUserDTO.description = string.Empty;
+                projectDTO.Name = string.Empty;
+                projectDTO.Description = string.Empty;
+
+                await UpdateProjects.InvokeAsync();
         }
-        await UpdateProjects.InvokeAsync();
     }
 }

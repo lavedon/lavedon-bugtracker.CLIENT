@@ -10,6 +10,7 @@ public interface IEntityService
     public List<TicketDTO> Tickets { get; set; }
 
     public Task CreateProject(ProjectDTO project);
+    public Task UpdateProject(ProjectWithUserDTO project);
     public Task DeleteProject(int projectId);
     public Task CreateTicket(CreateTicketDTO ticket);
     public Task DeleteTicket(int ticketId);

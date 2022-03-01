@@ -20,6 +20,13 @@
 <PageTitle>List of Projects</PageTitle>
 
 <h1>Projects</h1>
+<Dialog Show=@showDialog 
+    OnCancel="DialogCancelHandler"
+    OnOk="DialogOkHandler"><Title>@currentProjectName</Title>
+    <Body><CreateProjectForm SelectEditOrCreate=@CreateProjectForm.EditOrCreate.Edit 
+        PassedName=@currentProjectName PassedDescription=@currentProjectDescription>
+    </CreateProjectForm></Body> 
+    </Dialog>
 @if (EntityService.ProjectsWithUsers == null)
 {
     <h1><em>Loading...</em></h1>
@@ -40,7 +47,12 @@ else {
                 <tr>
                     <td>@project.name</td>
                     <td>@project.description</td>
-                    <td>@project.userCreated.username <button class="btn btn-outline-danger btn-sm" title="Delete ticket" @onclick="@(()=>DeleteProject(project))"><span class="oi oi-trash"></span></button></td>
+                    <td>@project.userCreated.username 
+                    <button class="btn btn-outline-primary btn-sm" title="Edit Ticket" @onclick="@(()=>OpenDialog(project))">
+                   <span class="oi oi-pencil"></span></button>
+                        <button class="btn btn-outline-danger btn-sm" title="Delete ticket" @onclick="@(()=>DeleteProject(project))">
+                        <span class="oi oi-trash"></span></button>
+                    </td>
                 </tr>
             }
     </tbody>
@@ -58,6 +70,7 @@ else {
 </NotAuthorized>
 </AuthorizeView>
 @code {
+    private bool showDialog = false;
 
     private static string consoleMessage = "";
     private ProjectDTO projectDTO = new ProjectDTO();
@@ -66,7 +79,17 @@ else {
     private EditContext? EditContext;
     private string projectJson = "";
     private string currentUserName = string.Empty;
+    private string currentProjectName = string.Empty;
+    private string currentProjectDescription = string.Empty;
     private List<ProjectWithUserDTO> currentProjects = new List<ProjectWithUserDTO>();
+
+    private void OpenDialog(ProjectWithUserDTO project)
+    {
+        currentProjectName = project.name;
+        currentProjectDescription = project.description;
+        showDialog = true;
+        
+    }
 
     private async Task DeleteProject(ProjectWithUserDTO project)
     {
@@ -83,11 +106,9 @@ else {
 
     protected async override void OnInitialized()
     {
-        EditContext = new EditContext(projectDTO);
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
-        Console.WriteLine("Inside OnInitialized()");
-        currentUserName = await LocalStorage.GetItemAsync<string>("usernameFromClaims");
+        Console.WriteLine("Inside Projects.razor OnInitialized()");
         await EntityService.GetProjects();
         StateHasChanged();
     }
@@ -155,5 +176,14 @@ private static async Task<ProjectDTO> ProjectsFromJson(string uri, HttpClient ht
         consoleMessage = "HTTP Response was invalid and cannot be deserialized.";
     }
     return null;
+    }
+    private void DialogCancelHandler(MouseEventArgs e)
+    {
+        showDialog = false;
+    }
+
+    private void DialogOkHandler(MouseEventArgs e)
+    {
+        showDialog = false;
     }
 }

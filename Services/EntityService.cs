@@ -1,3 +1,4 @@
+#nullable disable warnings
 using Client.Models;
 using Client.Static;
 using Microsoft.AspNetCore.Components;
@@ -39,6 +40,32 @@ public class EntityService : IEntityService
         // await httpService.Delete<ProjectDTO>($"https://localhost:7266/api/deleteproject/{projectId}");
         await httpService.Delete<int>($"{APIEndpoints.s_deleteproject}/{projectId}");
     }
+
+    public async Task UpdateProject(ProjectWithUserDTO project)
+    {
+        HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
+        Console.WriteLine("Http Service created");
+        Console.WriteLine(httpService);
+        Console.WriteLine("About to get the official id of the selected project.");
+        var result = await httpService.Get<ProjectWithUserDTO>($"{APIEndpoints.s_getprojectbyname}/{project.name}");
+        Console.WriteLine("result was:");
+        Console.WriteLine(result);
+        if (result != null)
+        {
+            Console.WriteLine("Result tested as not null");
+            Console.WriteLine($"Got the project ID number, it is ${result.id}");
+            project.id = result.id;
+        }
+        if (result is null) {
+            Console.WriteLine("result was null");
+            Console.WriteLine("Could not get the project ID number");
+        }
+        Console.WriteLine("About to try http put");
+        Console.WriteLine("Sending this project to put method");
+        Console.WriteLine(project);
+        await httpService.Put<ProjectWithUserDTO>($"{APIEndpoints.s_updateproject}/{project.id}", project);
+    }
+
     public async Task GetProjects()
     {
 
