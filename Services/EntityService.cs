@@ -47,8 +47,12 @@ public class EntityService : IEntityService
         Console.WriteLine("Http Service created");
         Console.WriteLine(httpService);
         Console.WriteLine("About to get the official id of the selected project.");
-        var result = await httpService.Get<ProjectWithUserDTO>($"{APIEndpoints.s_getprojectbyname}/{project.name}");
-        Console.WriteLine("result was:");
+        string uriProjectName = project.name;
+        uriProjectName = uriProjectName.Replace(" ", "%20");
+        Console.WriteLine("Formatted project name URI is: {0}", uriProjectName);
+        var result = await httpService.Get<ProjectWithUserDTO>($"{APIEndpoints.s_getprojectbyname}/{uriProjectName}");
+        Console.WriteLine("Project we got by name");
+        Console.WriteLine("result:");
         Console.WriteLine(result);
         if (result != null)
         {

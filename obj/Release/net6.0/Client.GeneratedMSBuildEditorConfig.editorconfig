@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = Client
+build_property.RootNamespace = Client
+build_property.ProjectDir = C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\my-coding-projects\Bug Tracker Multiple Repos\BugTracker Blazor Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/CreateTicket.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlVGlja2V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/LoginLogoutButton.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5Mb2dvdXRCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/Projects.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvamVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/Splash Pages/Splash-DemoAccounts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BsYXNoIFBhZ2VzXFNwbGFzaC1EZW1vQWNjb3VudHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/Tickets.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGlja2V0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Pages/Users.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/CreateProjectForm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENyZWF0ZVByb2plY3RGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/CreateTicketForm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENyZWF0ZVRpY2tldEZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/SplashLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFNwbGFzaExheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/Dialog.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-4tdvnxrouy
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ocnk4r8tjs
+
+[C:/my-coding-projects/Bug Tracker Multiple Repos/BugTracker Blazor Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kd1ih0s86n
