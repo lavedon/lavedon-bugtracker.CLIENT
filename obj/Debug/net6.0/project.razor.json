@@ -140,6 +140,39 @@
         }
       },
       {
+        "HashCode": -246654001,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Login",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Login"
+        }
+      },
+      {
+        "HashCode": -2010237384,
+        "Kind": "Components.Component",
+        "Name": "Client.Pages.Login",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 466193811,
         "Kind": "Components.Component",
         "Name": "Client.Pages.LoginLogoutButton",
@@ -272,39 +305,6 @@
         }
       },
       {
-        "HashCode": -246654001,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Login",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Login"
-        }
-      },
-      {
-        "HashCode": -2010237384,
-        "Kind": "Components.Component",
-        "Name": "Client.Pages.Login",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Pages.Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Pages.Login",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 187518356,
         "Kind": "Components.Component",
         "Name": "Client.Pages.Projects",
@@ -334,6 +334,276 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Pages.Projects",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1545017897,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.CreateProjectForm",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CreateProjectForm"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "UpdateProjects",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "UpdateProjects",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "SelectEditOrCreate",
+            "TypeName": "Client.Shared.CreateProjectForm.EditOrCreate",
+            "IsEnum": true,
+            "Metadata": {
+              "Common.PropertyName": "SelectEditOrCreate"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedName",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedName"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedDescription",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedDescription"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "PassedId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.CreateProjectForm"
+        }
+      },
+      {
+        "HashCode": -1286715704,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.CreateProjectForm",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Shared.CreateProjectForm"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "UpdateProjects",
+            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
+            "Metadata": {
+              "Common.PropertyName": "UpdateProjects",
+              "Components.EventCallback": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "SelectEditOrCreate",
+            "TypeName": "Client.Shared.CreateProjectForm.EditOrCreate",
+            "IsEnum": true,
+            "Metadata": {
+              "Common.PropertyName": "SelectEditOrCreate"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedName",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedName"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedDescription",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedDescription"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "PassedId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.CreateProjectForm",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1807657132,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.CreateTicketForm",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CreateTicketForm"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentUserAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentProjectAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentProjectAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "ButtonText",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ButtonText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentUserName",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserName"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedTitle",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedTitle"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedDescription",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedDescription"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedUserCreated",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedUserCreated"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.CreateTicketForm"
+        }
+      },
+      {
+        "HashCode": 1890141325,
+        "Kind": "Components.Component",
+        "Name": "Client.Shared.CreateTicketForm",
+        "AssemblyName": "Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Client.Shared.CreateTicketForm"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentUserAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentProjectAssigned",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentProjectAssigned"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "ButtonText",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "ButtonText"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "CurrentUserName",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "CurrentUserName"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedTitle",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedTitle"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedDescription",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedDescription"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "PassedUserCreated",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "PassedUserCreated"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Client.Shared.CreateTicketForm",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -811,260 +1081,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Client.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1807657132,
-        "Kind": "Components.Component",
-        "Name": "Client.Shared.CreateTicketForm",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CreateTicketForm"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "CurrentUserAssigned",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "CurrentUserAssigned"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "CurrentProjectAssigned",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "CurrentProjectAssigned"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "ButtonText",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "ButtonText"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "CurrentUserName",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "CurrentUserName"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedTitle",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedTitle"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedDescription",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedDescription"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedUserCreated",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedUserCreated"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Shared.CreateTicketForm"
-        }
-      },
-      {
-        "HashCode": 1890141325,
-        "Kind": "Components.Component",
-        "Name": "Client.Shared.CreateTicketForm",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Shared.CreateTicketForm"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "CurrentUserAssigned",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "CurrentUserAssigned"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "CurrentProjectAssigned",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "CurrentProjectAssigned"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "ButtonText",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "ButtonText"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "CurrentUserName",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "CurrentUserName"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedTitle",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedTitle"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedDescription",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedDescription"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedUserCreated",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedUserCreated"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Shared.CreateTicketForm",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1670293210,
-        "Kind": "Components.Component",
-        "Name": "Client.Shared.CreateProjectForm",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CreateProjectForm"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "UpdateProjects",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
-            "Metadata": {
-              "Common.PropertyName": "UpdateProjects",
-              "Components.EventCallback": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "SelectEditOrCreate",
-            "TypeName": "Client.Shared.CreateProjectForm.EditOrCreate",
-            "IsEnum": true,
-            "Metadata": {
-              "Common.PropertyName": "SelectEditOrCreate"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedName",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedName"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedDescription",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedDescription"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Shared.CreateProjectForm"
-        }
-      },
-      {
-        "HashCode": -1320776325,
-        "Kind": "Components.Component",
-        "Name": "Client.Shared.CreateProjectForm",
-        "AssemblyName": "Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Client.Shared.CreateProjectForm"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "UpdateProjects",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Web.MouseEventArgs>",
-            "Metadata": {
-              "Common.PropertyName": "UpdateProjects",
-              "Components.EventCallback": "True"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "SelectEditOrCreate",
-            "TypeName": "Client.Shared.CreateProjectForm.EditOrCreate",
-            "IsEnum": true,
-            "Metadata": {
-              "Common.PropertyName": "SelectEditOrCreate"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedName",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedName"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "PassedDescription",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "PassedDescription"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Client.Shared.CreateProjectForm",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

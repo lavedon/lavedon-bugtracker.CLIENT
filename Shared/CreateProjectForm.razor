@@ -32,6 +32,7 @@
     [Parameter] public EditOrCreate SelectEditOrCreate { get; set; } = EditOrCreate.Create;
     [Parameter] public string PassedName { get; set; } = string.Empty;
     [Parameter] public string PassedDescription { get; set; } = string.Empty;
+    [Parameter] public int PassedId { get; set; } = 0;
 
     private ProjectDTO projectDTO = new ProjectDTO();
     private ProjectWithUserDTO projectWithUserDTO = new ProjectWithUserDTO();
@@ -52,7 +53,10 @@
         EditContext = new EditContext(projectDTO);
         projectDTO.Name = PassedName;
         projectDTO.Description = PassedDescription;
+        projectDTO.Id = PassedId;
+
         Console.WriteLine("Inside CreateProjectForm's OnInitialized()");
+        Console.WriteLine("The current project's ID is: ", projectDTO.Id);
         StateHasChanged();
     }
 
@@ -63,13 +67,13 @@
             if (EditContext.Validate())
             {
                 Console.WriteLine("CreatedProjectForm Validated EditContext OK");
-                    projectDTO = EditContext.Model as ProjectDTO;
-                    projectDTO.UserCreated = currentUserName;
+                projectDTO = EditContext.Model as ProjectDTO;
+                projectDTO.UserCreated = currentUserName;
 
-                    await EntityService.CreateProject(projectDTO);
+                await EntityService.CreateProject(projectDTO);
 
-                    projectDTO.Name = string.Empty;
-                    projectDTO.Description = string.Empty;
+                projectDTO.Name = string.Empty;
+                projectDTO.Description = string.Empty;
             }
             else
             {
@@ -89,6 +93,7 @@
                     return;
                 }
 
+                projectWithUserDTO.id = (int) projectDTO.Id;
                 projectWithUserDTO.name = projectDTO.Name ?? string.Empty;
                 projectWithUserDTO.description = projectDTO.Description ?? string.Empty;
 

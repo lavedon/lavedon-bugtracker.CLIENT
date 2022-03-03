@@ -44,29 +44,6 @@ public class EntityService : IEntityService
     public async Task UpdateProject(ProjectWithUserDTO project)
     {
         HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
-        Console.WriteLine("Http Service created");
-        Console.WriteLine(httpService);
-        Console.WriteLine("About to get the official id of the selected project.");
-        string uriProjectName = project.name;
-        uriProjectName = uriProjectName.Replace(" ", "%20");
-        Console.WriteLine("Formatted project name URI is: {0}", uriProjectName);
-        var result = await httpService.Get<ProjectWithUserDTO>($"{APIEndpoints.s_getprojectbyname}/{uriProjectName}");
-        Console.WriteLine("Project we got by name");
-        Console.WriteLine("result:");
-        Console.WriteLine(result);
-        if (result != null)
-        {
-            Console.WriteLine("Result tested as not null");
-            Console.WriteLine($"Got the project ID number, it is ${result.id}");
-            project.id = result.id;
-        }
-        if (result is null) {
-            Console.WriteLine("result was null");
-            Console.WriteLine("Could not get the project ID number");
-        }
-        Console.WriteLine("About to try http put");
-        Console.WriteLine("Sending this project to put method");
-        Console.WriteLine(project);
         await httpService.Put<ProjectWithUserDTO>($"{APIEndpoints.s_updateproject}/{project.id}", project);
     }
 

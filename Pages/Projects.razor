@@ -24,7 +24,8 @@
     OnCancel="DialogCancelHandler"
     OnOk="DialogOkHandler"><Title>@currentProjectName</Title>
     <Body><CreateProjectForm SelectEditOrCreate=@CreateProjectForm.EditOrCreate.Edit 
-        PassedName=@currentProjectName PassedDescription=@currentProjectDescription>
+        PassedName=@currentProjectName PassedDescription=@currentProjectDescription
+        PassedId=@currentProjectId>     
     </CreateProjectForm></Body> 
     </Dialog>
 @if (EntityService.ProjectsWithUsers == null)
@@ -81,14 +82,17 @@ else {
     private string currentUserName = string.Empty;
     private string currentProjectName = string.Empty;
     private string currentProjectDescription = string.Empty;
+    private int currentProjectId = 0;
+
     private List<ProjectWithUserDTO> currentProjects = new List<ProjectWithUserDTO>();
 
     private void OpenDialog(ProjectWithUserDTO project)
     {
         currentProjectName = project.name;
         currentProjectDescription = project.description;
+        currentProjectId = project.id;
         showDialog = true;
-        
+
     }
 
     private async Task DeleteProject(ProjectWithUserDTO project)
@@ -145,45 +149,49 @@ else {
         StateHasChanged();
     }
 
-private static async Task<ProjectDTO> ProjectsFromJson(string uri, HttpClient httpClient, string? token)
-{
-
-    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.Trim('"'));
-    httpClient.DefaultRequestHeaders.Add("x-custom-header", "value");
-
-    using var httpResponse = await httpClient.GetAsync(uri, HttpCompletionOption.ResponseHeadersRead);
-
-    httpResponse.EnsureSuccessStatusCode();
-    
-
-    if (httpResponse.Content.Headers.ContentType.MediaType == "application/json")
+    private static async Task<ProjectDTO> ProjectsFromJson(string uri, HttpClient httpClient, string? token)
     {
-        var contentStream = await httpResponse.Content.ReadAsStreamAsync();
 
-        try
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.Trim('"'));
+        httpClient.DefaultRequestHeaders.Add("x-custom-header", "value");
+
+        using var httpResponse = await httpClient.GetAsync(uri, HttpCompletionOption.ResponseHeadersRead);
+
+        httpResponse.EnsureSuccessStatusCode();
+
+
+        if (httpResponse.Content.Headers.ContentType.MediaType == "application/json")
         {
-            return await System.Text.Json.JsonSerializer.DeserializeAsync<ProjectDTO>(contentStream, 
-                new System.Text.Json.JsonSerializerOptions
+            var contentStream = await httpResponse.Content.ReadAsStreamAsync();
+
+            try
+            {
+                return await System.Text.Json.JsonSerializer.DeserializeAsync<ProjectDTO>(contentStream, 
+                    new System.Text.Json.JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = false
                 });
+            }
+            catch (JsonException) {
+                consoleMessage = "Error deserializing JSON";
+            }
         }
-        catch (JsonException) {
-            consoleMessage = "Error deserializing JSON";
+        else {
+            consoleMessage = "HTTP Response was invalid and cannot be deserialized.";
         }
+        return null;
     }
-    else {
-        consoleMessage = "HTTP Response was invalid and cannot be deserialized.";
-    }
-    return null;
-    }
-    private void DialogCancelHandler(MouseEventArgs e)
+    private async Task DialogCancelHandler(MouseEventArgs e)
     {
         showDialog = false;
+        await EntityService.GetProjects();
+        StateHasChanged();
     }
 
-    private void DialogOkHandler(MouseEventArgs e)
+    private async Task DialogOkHandler(MouseEventArgs e)
     {
         showDialog = false;
+        await EntityService.GetProjects();
+        StateHasChanged();
     }
 }
