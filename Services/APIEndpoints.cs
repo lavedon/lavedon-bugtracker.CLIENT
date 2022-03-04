@@ -15,6 +15,7 @@ public static class APIEndpoints
     internal readonly static string s_getprojectbyname = $"{ServerBaseUrl}/api/getprojectbyname";
     internal readonly static string s_getallusers = $"{ServerBaseUrl}/api/getallusers";
     internal readonly static string s_createticket = $"{ServerBaseUrl}/api/createticket";
+    internal readonly static string s_updateticket = $"{ServerBaseUrl}/api/updateticket";
     internal readonly static string s_deleteticket = $"{ServerBaseUrl}/api/deleteticket";
     internal readonly static string s_getalltickets = $"{ServerBaseUrl}/api/getalltickets";
 

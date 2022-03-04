@@ -59,6 +59,14 @@
     <ValidationSummary />
 </EditForm>
 @code {
+    public enum EditOrCreate
+    {
+        Create,
+        Edit
+    }
+    [Parameter] 
+    public EditOrCreate SelectEditOrCreate { get; set; } = EditOrCreate.Create;
+
     [Parameter]
     public string CurrentUserAssigned { get; set; } = string.Empty;
     [Parameter]
@@ -76,6 +84,16 @@
 
     [Parameter]
     public string PassedUserCreated { get; set; } = string.Empty;
+
+    [Parameter]
+    public int PassedTicketId { get; set; } = 0;
+    [Parameter]
+    public int PassedProjectId { get; set; } = 0;
+    [Parameter]
+    public int PassedAssignedUserId { get; set; } = 0;
+
+    [Parameter]
+    public int PassedUserCreatedId { get; set; } = 0;
 
 
     private CreateTicketDTO ticketDTO = new CreateTicketDTO();
@@ -98,6 +116,8 @@
 
     private void HandleSubmit()
     {
+        if (SelectEditOrCreate == EditOrCreate.Create)
+        {
             ticketDTO.UserCreated = CurrentUserName;
             if (ticketDTO.Project is null)
             {
@@ -115,5 +135,15 @@
             ticketDTO.Description = string.Empty;
             ticketDTO.Project = string.Empty;
             ticketDTO.UserAssigned = string.Empty;
+        }
+        if (SelectEditOrCreate == EditOrCreate.Edit)
+        {
+            EntityService.UpdateTicket(ticketDTO, PassedTicketId);
+
+            ticketDTO.Name = string.Empty;
+            ticketDTO.Description = string.Empty;
+            ticketDTO.Project = string.Empty;
+            ticketDTO.UserAssigned = string.Empty;
+        }
     }
 }

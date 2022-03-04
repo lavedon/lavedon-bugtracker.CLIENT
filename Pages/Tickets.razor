@@ -12,7 +12,11 @@
         OnOk="DialogOkHandler"><Title>@ticketTitle</Title>
         <Body><CreateTicketForm CurrentUserAssigned=@ticketAssignedTo CurrentProjectAssigned=@ticketProject 
          PassedUserCreated=@ticketCreatedBy ButtonText="Edit Ticket" 
-        PassedTitle=@ticketTitle PassedDescription=@ticketDescription/></Body>
+        PassedTitle=@ticketTitle PassedDescription=@ticketDescription 
+        PassedTicketId=@ticketId SelectEditOrCreate=@CreateTicketForm.EditOrCreate.Edit
+        PassedProjectId=@projectId
+        PassedUserCreatedId=@userCreatedId PassedAssignedUserId=@userAssignedId
+        /></Body>
     </Dialog>
 
 
@@ -64,14 +68,26 @@ else {
     public string? ticketProject = string.Empty;
     public string? ticketAssignedTo = string.Empty;
     public string ticketCreatedBy = string.Empty;
+    public int ticketId = 0;
+    public int projectId = 0;
+    public int userCreatedId = 0;
+    public int userAssignedId = 0;
 
     private void OpenDialog(TicketDTO ticket)
     {
+        ticketId = ticket.Id;
+        projectId = ticket.ProjectId;
+        userCreatedId = (int) ticket.UserCreatedId!;
+        userAssignedId = (int) ticket.UserAssignedId!;
+
         ticketTitle = ticket.Name;
         ticketDescription = ticket.Description;
         ticketProject = ticket.Project.Name!;
         ticketAssignedTo = ticket.UserAssigned.Username;
         ticketCreatedBy = ticket.UserCreated.Username!;
+        
+
+
         showDialog = true;
     }
 
@@ -89,13 +105,17 @@ else {
         StateHasChanged();
     }
 
-    private void DialogCancelHandler(MouseEventArgs e)
+    private async Task DialogCancelHandler(MouseEventArgs e)
     {
         showDialog = false;
+        await this.EntityService.GetTickets();
+        StateHasChanged();
     }
 
-    private void DialogOkHandler(MouseEventArgs e)
+    private async Task DialogOkHandler(MouseEventArgs e)
     {
         showDialog = false;
+        await this.EntityService.GetTickets();
+        StateHasChanged();
     }
 }

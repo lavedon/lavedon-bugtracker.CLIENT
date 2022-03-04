@@ -14,6 +14,7 @@ public interface IEntityService
     public Task DeleteProject(int projectId);
     public Task CreateTicket(CreateTicketDTO ticket);
     public Task DeleteTicket(int ticketId);
+    public Task UpdateTicket(CreateTicketDTO ticket, int ticketId);
     public Task GetProjects();
     public Task GetUsers();
 

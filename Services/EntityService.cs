@@ -79,6 +79,22 @@ public class EntityService : IEntityService
         await httpService.Post<CreateTicketDTO>(APIEndpoints.s_createticket, ticket);
     }
 
+    public async Task UpdateTicket(CreateTicketDTO ticket, int ticketId)
+    {
+        TicketDTO ticketDTO = new TicketDTO();
+        ticketDTO.Id = (int) ticketId;
+        ticketDTO.Name = ticket.Name;
+        ticketDTO.Description = ticket.Description;
+        ticketDTO.ProjectId = 0;
+        ticketDTO.UserCreatedId = 0;
+        ticketDTO.UserAssignedId = 0;
+        
+
+        // ticketDTO.UserAssigned  = ticket.UserAssigned;
+        HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
+        await httpService.Put<TicketDTO>($"{APIEndpoints.s_updateticket}/{ticketId}", ticketDTO);
+    }
+
     public async Task DeleteTicket(int ticketId)
     {
         HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
