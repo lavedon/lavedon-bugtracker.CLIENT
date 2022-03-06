@@ -99,11 +99,6 @@
 
                 await EntityService.UpdateProject(projectWithUserDTO);
 
-                projectWithUserDTO.name = string.Empty;
-                projectWithUserDTO.description = string.Empty;
-                projectDTO.Name = string.Empty;
-                projectDTO.Description = string.Empty;
-
                 await UpdateProjects.InvokeAsync();
         }
     }

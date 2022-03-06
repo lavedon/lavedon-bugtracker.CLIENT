@@ -8,10 +8,9 @@
 <PageTitle>List of Tickets</PageTitle>
 
 <Dialog Show=@showDialog
-        OnCancel="DialogCancelHandler"
         OnOk="DialogOkHandler"><Title>@ticketTitle</Title>
         <Body><CreateTicketForm CurrentUserAssigned=@ticketAssignedTo CurrentProjectAssigned=@ticketProject 
-         PassedUserCreated=@ticketCreatedBy ButtonText="Edit Ticket" 
+        PassedUserCreated=@ticketCreatedBy ButtonText="Edit Ticket" 
         PassedTitle=@ticketTitle PassedDescription=@ticketDescription 
         PassedTicketId=@ticketId SelectEditOrCreate=@CreateTicketForm.EditOrCreate.Edit
         PassedProjectId=@projectId
@@ -76,6 +75,8 @@ else {
     private void OpenDialog(TicketDTO ticket)
     {
         ticketId = ticket.Id;
+        Console.WriteLine("The selected ticket project id is:");
+        Console.WriteLine(ticket.ProjectId);
         projectId = ticket.ProjectId;
         userCreatedId = (int) ticket.UserCreatedId!;
         userAssignedId = (int) ticket.UserAssignedId!;
@@ -86,8 +87,6 @@ else {
         ticketAssignedTo = ticket.UserAssigned.Username;
         ticketCreatedBy = ticket.UserCreated.Username!;
         
-
-
         showDialog = true;
     }
 
@@ -105,17 +104,17 @@ else {
         StateHasChanged();
     }
 
-    private async Task DialogCancelHandler(MouseEventArgs e)
+    private async Task DialogOkHandler(MouseEventArgs e)
     {
         showDialog = false;
         await this.EntityService.GetTickets();
         StateHasChanged();
     }
 
-    private async Task DialogOkHandler(MouseEventArgs e)
-    {
+    private void CloseOnFormSubmit(object sender, EventArgs e) {
+        
         showDialog = false;
-        await this.EntityService.GetTickets();
         StateHasChanged();
+        
     }
 }

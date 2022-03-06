@@ -14,6 +14,7 @@ public class EntityService : IEntityService
     private readonly ILocalStorageService _localStorageService;
     private readonly IConfiguration _configuration;
 
+
     public EntityService(HttpClient http, NavigationManager navigationManager, ILocalStorageService localStorageService, IConfiguration configuration)
     {
         _http = http;
@@ -81,18 +82,9 @@ public class EntityService : IEntityService
 
     public async Task UpdateTicket(CreateTicketDTO ticket, int ticketId)
     {
-        TicketDTO ticketDTO = new TicketDTO();
-        ticketDTO.Id = (int) ticketId;
-        ticketDTO.Name = ticket.Name;
-        ticketDTO.Description = ticket.Description;
-        ticketDTO.ProjectId = 0;
-        ticketDTO.UserCreatedId = 0;
-        ticketDTO.UserAssignedId = 0;
-        
-
         // ticketDTO.UserAssigned  = ticket.UserAssigned;
         HttpService httpService = new HttpService(_http, _navigationManager, _localStorageService, _configuration);
-        await httpService.Put<TicketDTO>($"{APIEndpoints.s_updateticket}/{ticketId}", ticketDTO);
+        await httpService.Put<CreateTicketDTO>($"{APIEndpoints.s_updateticket}/{ticketId}", ticket);
     }
 
     public async Task DeleteTicket(int ticketId)

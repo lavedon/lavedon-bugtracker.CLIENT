@@ -21,7 +21,6 @@
 
 <h1>Projects</h1>
 <Dialog Show=@showDialog 
-    OnCancel="DialogCancelHandler"
     OnOk="DialogOkHandler"><Title>@currentProjectName</Title>
     <Body><CreateProjectForm SelectEditOrCreate=@CreateProjectForm.EditOrCreate.Edit 
         PassedName=@currentProjectName PassedDescription=@currentProjectDescription
@@ -92,7 +91,6 @@ else {
         currentProjectDescription = project.description;
         currentProjectId = project.id;
         showDialog = true;
-
     }
 
     private async Task DeleteProject(ProjectWithUserDTO project)
@@ -115,13 +113,6 @@ else {
         Console.WriteLine("Inside Projects.razor OnInitialized()");
         await EntityService.GetProjects();
         StateHasChanged();
-    }
-
-    protected async override void OnParametersSet()
-    {
-        Console.WriteLine("OnParametersSet");
-        Console.WriteLine("Calling GetProjects() from OnParametersSet()");
-
     }
 
     private async void HandleSubmit()
